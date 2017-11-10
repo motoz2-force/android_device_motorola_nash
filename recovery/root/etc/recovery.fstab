@@ -1,17 +1,18 @@
 /boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect
+/data	         ext4              /dev/block/bootdevice/by-name/userdata   flags=encryptable=ice
+/misc	         emmc              /dev/block/bootdevice/by-name/misc
 /system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect
 /system_image    emmc              /dev/block/bootdevice/by-name/system     flags=slotselect
-/data	         ext4              /dev/block/bootdevice/by-name/userdata   flags=wipeingui;wipeduringfactoryreset
-/persist 		 ext4              /dev/block/sdb2
-/firmware		 ext4              /dev/block/bootdevice/by-name/modem      flags=slotselect         
-/oem			 ext4			   /dev/block/bootdevice/by-name/oem_a      flags=slotselect 
-/misc	         emmc              /dev/block/bootdevice/by-name/misc
-/metadata	     emmc              /dev/block/sdb8
-/logo            emmc              /dev/block/bootdevice/by-name/logo       flags=slotselect 
+/efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
+/efs2            emmc              /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1       
+/persist         ext4              /dev/block/sdb2
+/firmware        ext4              /dev/block/bootdevice/by-name/modem      flags=slotselect         
+/oem	         ext4              /dev/block/bootdevice/by-name/oem        flags=display="OEM";backup=1;slotselect;wipeingui 
+/metadata	 emmc              /dev/block/sdb8
+/logo            emmc              /dev/block/bootdevice/by-name/logo       flags=display="Boot logo";backup=1;slotselect 
 /keymaster       emmc              /dev/block/bootdevice/by-name/keymaster_a  flags=slotselect
 /bt_firmware     emmc              /dev/block/sde15
 /carrier         emmc              /dev/block/sdb11
-/efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
-/efs2            emmc              /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1       
+
 /external_sd     auto              /dev/block/mmcblk0p1 /dev/block/mmcblk0  flags=display="Micro SDcard";storage;wipeingui;removable
 /usb-otg         vfat              /dev/block/sdg1      /dev/block/sdg      flags=removable;storage;display=USB-OTG
