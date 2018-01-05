@@ -27,7 +27,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_PACKAGES += \
-    charger_res_images
+    charger_res_images \
+    charger \
+    update_engine_sideload
 
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
