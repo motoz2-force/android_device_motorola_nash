@@ -33,10 +33,10 @@ PRODUCT_PACKAGES += \
 
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
-	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 PRODUCT_DEVICE := nash
 PRODUCT_NAME := omni_nash
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto Z (2)
-PRODUCT_MANUFACTURER := Motorola
+PRODUCT_MANUFACTURER := motorola
