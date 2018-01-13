@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+# ROM fstab
+PRODUCT_COPY_FILES += \
+  device/motorola/nash/rootdir/root/fstab.qcom:root/fstab.qcom
+
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
 	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
