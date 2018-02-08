@@ -25,6 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    setenforce 0
+
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
