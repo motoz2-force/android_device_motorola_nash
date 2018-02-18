@@ -64,6 +64,11 @@ on boot
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
+# Used to set USB configuration at boot and to switch the configuration
+# when changing the default configuration
+on boot && property:persist.sys.usb.config=*
+    setprop sys.usb.config ${persist.sys.usb.config}
+
 on property:sys.usb.config=none
     write /config/usb_gadget/g1/UDC "none"
     stop adbd
