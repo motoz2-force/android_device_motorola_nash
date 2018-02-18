@@ -19,7 +19,6 @@
 /logo            emmc      /dev/block/bootdevice/by-name/logo                     flags=display="Boot logo";backup=1;slotselect
 /keymaster       emmc      /dev/block/bootdevice/by-name/keymaster                flags=slotselect
 /bt_firmware     ext4      /dev/block/bootdevice/by-name/bluetooth                flags=display="Bluetooth";backup=1;slotselect
-/carrier         ext4      /dev/block/bootdevice/by-name/carrier                  flags=display="Carrier";backup=1
 
 # Removable storage
 /external_sd     auto      /dev/block/mmcblk0p1    /dev/block/mmcblk0             flags=display="Micro SDcard";storage;wipeingui;removable
