@@ -1,1 +1,0 @@
-allow kernel rootfs:file { execute execute_no_trans };
