@@ -10,9 +10,9 @@ relink()
 
 finish()
 {
-	umount /v
+    #umount /v
 	umount /s
-	rmdir /v
+    #rmdir /v
 	rmdir /s
 	setprop crypto.ready 1
 	exit 0
@@ -30,9 +30,6 @@ fi
 syspath="/dev/block/bootdevice/by-name/system$suffix"
 mkdir /s
 mount -t ext4 -o ro "$syspath" /s
-
-#Symlink vendor
-ln -s /s/system/vendor /v
 
 is_fastboot_twrp=$(getprop ro.boot.fastboot)
 if [ ! -z "$is_fastboot_twrp" ]; then
@@ -66,37 +63,37 @@ cp /s/system/lib64/android.hidl.base@1.0.so /sbin/
 cp /s/system/lib64/libicuuc.so /sbin/
 cp /s/system/lib64/libxml2.so /sbin/
 
-relink /v/bin/qseecomd
+relink /s/system/vendor/bin/qseecomd
 
-cp /v/lib64/libdiag.so /vendor/lib64/
-cp /v/lib64/libdrmfs.so /vendor/lib64/
-cp /v/lib64/libdrmtime.so /vendor/lib64/
-cp /v/lib64/libGPreqcancel.so /vendor/lib64/
-cp /v/lib64/libGPreqcancel_svc.so /vendor/lib64/
-cp /v/lib64/libqdutils.so /vendor/lib64/
-cp /v/lib64/libqisl.so /vendor/lib64/
-cp /v/lib64/libqservice.so /vendor/lib64/
-cp /v/lib64/libQSEEComAPI.so /vendor/lib64/
-cp /v/lib64/librecovery_updater_msm.so /vendor/lib64/
-cp /v/lib64/librpmb.so /vendor/lib64/
-cp /v/lib64/libSecureUILib.so /vendor/lib64/
-cp /v/lib64/libssd.so /vendor/lib64/
-cp /v/lib64/libtime_genoff.so /vendor/lib64/
-cp /v/lib64/libkeymasterdeviceutils.so /vendor/lib64/
-cp /v/lib64/libkeymasterprovision.so /vendor/lib64/
-cp /v/lib64/libkeymasterutils.so /vendor/lib64/
-cp /v/lib64/libspl.so /vendor/lib64/
-cp /v/lib64/hw/bootctrl.msm8998.so /vendor/lib64/hw/
-cp /v/lib64/hw/android.hardware.boot@1.0-impl.so /vendor/lib64/hw/
-cp /v/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so /vendor/lib64/hw/
-cp /v/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/libdiag.so /vendor/lib64/
+cp /s/system/vendor/lib64/libdrmfs.so /vendor/lib64/
+cp /s/system/vendor/lib64/libdrmtime.so /vendor/lib64/
+cp /s/system/vendor/lib64/libGPreqcancel.so /vendor/lib64/
+cp /s/system/vendor/lib64/libGPreqcancel_svc.so /vendor/lib64/
+cp /s/system/vendor/lib64/libqdutils.so /vendor/lib64/
+cp /s/system/vendor/lib64/libqisl.so /vendor/lib64/
+cp /s/system/vendor/lib64/libqservice.so /vendor/lib64/
+cp /s/system/vendor/lib64/libQSEEComAPI.so /vendor/lib64/
+cp /s/system/vendor/lib64/librecovery_updater_msm.so /vendor/lib64/
+cp /s/system/vendor/lib64/librpmb.so /vendor/lib64/
+cp /s/system/vendor/lib64/libSecureUILib.so /vendor/lib64/
+cp /s/system/vendor/lib64/libssd.so /vendor/lib64/
+cp /s/system/vendor/lib64/libtime_genoff.so /vendor/lib64/
+cp /s/system/vendor/lib64/libkeymasterdeviceutils.so /vendor/lib64/
+cp /s/system/vendor/lib64/libkeymasterprovision.so /vendor/lib64/
+cp /s/system/vendor/lib64/libkeymasterutils.so /vendor/lib64/
+cp /s/system/vendor/lib64/libspl.so /vendor/lib64/
+cp /s/system/vendor/lib64/hw/bootctrl.msm8998.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/hw/android.hardware.boot@1.0-impl.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so /vendor/lib64/hw/
 
-cp /v/manifest.xml /vendor/
-cp /v/compatibility_matrix.xml /vendor/
+cp /s/system/vendor/manifest.xml /vendor/
+cp /s/system/vendor/compatibility_matrix.xml /vendor/
 
-relink /v/bin/hw/android.hardware.boot@1.0-service
-relink /v/bin/hw/android.hardware.gatekeeper@1.0-service
-relink /v/bin/hw/android.hardware.keymaster@3.0-service
+relink /s/system/vendor/bin/hw/android.hardware.boot@1.0-service
+relink /s/system/vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+relink /s/system/vendor/bin/hw/android.hardware.keymaster@3.0-service
 
 finish
 exit 0
