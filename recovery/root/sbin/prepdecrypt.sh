@@ -62,6 +62,8 @@ mkdir -p /vendor/lib64/hw/
 cp /s/system/lib64/android.hidl.base@1.0.so /sbin/
 cp /s/system/lib64/libicuuc.so /sbin/
 cp /s/system/lib64/libxml2.so /sbin/
+cp /s/system/lib64/libkeymaster1.so /sbin/
+cp /s/system/lib64/libkeymaster_messages.so /sbin/
 
 relink /s/system/vendor/bin/qseecomd
 
@@ -84,6 +86,8 @@ cp /s/system/vendor/lib64/libkeymasterprovision.so /vendor/lib64/
 cp /s/system/vendor/lib64/libkeymasterutils.so /vendor/lib64/
 cp /s/system/vendor/lib64/libspl.so /vendor/lib64/
 cp /s/system/vendor/lib64/hw/bootctrl.msm8998.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/hw/gatekeeper.msm8998.so /vendor/lib64/hw/
+cp /s/system/vendor/lib64/hw/keystore.msm8998.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/android.hardware.boot@1.0-impl.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so /vendor/lib64/hw/
