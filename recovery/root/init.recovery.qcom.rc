@@ -25,9 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on early-init
-    setenforce 0
-
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
@@ -35,8 +32,6 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
-    setprop ro.hardware.bootctrl msm8998
-    setprop ro.build.system_root_image true
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
@@ -64,7 +59,6 @@ service hwservicemanager /sbin/hwservicemanager
 service boot-1-0 /sbin/android.hardware.boot@1.0-service
     user root
     group root
-    disabled
     seclabel u:r:recovery:s0
 
 service servicemanager /sbin/servicemanager
@@ -107,21 +101,23 @@ on boot
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
 on init
-    start hwservicemanager
-    start boot-1-0
+    setprop ro.hardware.keystore msm8998
+    setprop ro.hardware.gatekeeper msm8998
+    setprop ro.hardware.bootctrl msm8998
+    setprop ro.build.system_root_image true
     start prepdecrypt
     #setprop crypto.ready 1
+
+on property:crypto.ready=1
+    start hwservicemanager
+    start keymaster-3-0
+    start gatekeeper-1-0
+    start sbinqseecomd
+    start servicemanager
 
 on property:crypto.ready=0
     stop sbinqseecomd
     stop keymaster-3-0
     stop gatekeeper-1-0
+    stop hwservicemanager
     stop servicemanager
-
-on property:crypto.ready=1
-    start sbinqseecomd
-
-on property:sys.listeners.registered=true
-    start keymaster-3-0
-    start gatekeeper-1-0
-    start servicemanager
