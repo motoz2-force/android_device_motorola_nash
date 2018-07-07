@@ -69,6 +69,9 @@ on boot
 on boot && property:persist.sys.usb.config=*
     setprop sys.usb.config ${persist.sys.usb.config}
 
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+
 on property:sys.usb.config=none
     write /config/usb_gadget/g1/UDC "none"
     stop adbd
