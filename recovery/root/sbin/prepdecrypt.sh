@@ -85,7 +85,6 @@ cp /s/system/vendor/lib64/libkeymasterdeviceutils.so /vendor/lib64/
 cp /s/system/vendor/lib64/libkeymasterprovision.so /vendor/lib64/
 cp /s/system/vendor/lib64/libkeymasterutils.so /vendor/lib64/
 cp /s/system/vendor/lib64/libspl.so /vendor/lib64/
-cp /s/system/vendor/lib64/hw/bootctrl.msm8998.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/gatekeeper.msm8998.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/keystore.msm8998.so /vendor/lib64/hw/
 cp /s/system/vendor/lib64/hw/android.hardware.boot@1.0-impl.so /vendor/lib64/hw/
