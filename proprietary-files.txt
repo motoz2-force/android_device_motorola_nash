@@ -57,9 +57,11 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/lib/vendor.qti.hardware.fm@1.0.so
 
 # Camera
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
@@ -1023,6 +1025,8 @@ vendor/lib64/sensors.tof.so
 vendor/lib/sensors.tof.so
 vendor/lib64/libiio.so
 vendor/lib/libiio.so
+vendor/lib64/libsns_low_lat_stream_stub.so
+vendor/lib/libsns_low_lat_stream_stub.so
 
 # Thermal
 vendor/etc/thermal-engine.conf|04a67cd64dee5d9718fd2b1f0dd96e3531165313
