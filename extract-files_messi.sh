@@ -55,22 +55,12 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files_nash.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files_messi.txt "$SRC" "$SECTION"
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-# Load libSonyDefocus from vendor
-CAMERA_IMX386="$BLOB_ROOT"/vendor/lib/libmmcamera_imx386.so
-sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "$CAMERA_IMX386"
 
 # Load ZAF configs from vendor
 ZAF_CORE="$BLOB_ROOT"/vendor/lib/libzaf_core.so
 sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
-
-# Using in vendor libgui for O cam blobs
-sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_ppeiscore.so
-sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera2_stats_modules.so
-sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_bokeh.so
-sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_vstab_module.so
 
 "$MY_DIR"/setup-makefiles.sh
