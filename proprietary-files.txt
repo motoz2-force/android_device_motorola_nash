@@ -11,15 +11,6 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# ACDB - from nash
-vendor/etc/acdbdata/Bluetooth_cal.acdb|679e0558ce41a7f97f874d4170808f2645bdf9da
-vendor/etc/acdbdata/General_cal.acdb|6b6a43ed35956ae6bdaad88b66fc2118807a9eb7
-vendor/etc/acdbdata/Global_cal.acdb|83a03020afcab33eb2c67de1f7ae42f3cdf1c908
-vendor/etc/acdbdata/Handset_cal.acdb|7faeb7338338b04c5fa888c9848821f5f5a2aea4
-vendor/etc/acdbdata/Hdmi_cal.acdb|052cbf48871babf1b45b7219017bccd0dd07bb61
-vendor/etc/acdbdata/Headset_cal.acdb|872558435fc183bc19913b7ed771a53e2ff4f199
-vendor/etc/acdbdata/Speaker_cal.acdb|ef6af0c368f98ebffdd6b1108b4fa53a931287ce
-
 # AptX
 lib64/libaptX_encoder.so
 lib64/libaptXHD_encoder.so
@@ -62,6 +53,11 @@ vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
+
+# Cam from P
+vendor/lib/libmot_gpu_mapper.so
+vendor/lib/libgui_vendor.so|2289516454cceae50bb3963f9255bc113a24b508
+vendor/lib/libPui.so|2289516454cceae50bb3963f9255bc113a24b508
 
 # DRM
 vendor/bin/qseecomd
@@ -439,12 +435,6 @@ etc/permissions/com.motorola.camera2.xml:vendor/etc/permissions/com.motorola.cam
 # NFC
 vendor/lib64/libpn553_fw.so
 
-# Perf
-vendor/bin/energy-awareness
-vendor/etc/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
-vendor/lib/libqti-perfd-client.so|fe671eb9cc05128f88a2acdaf0fbd28a1f354080
-vendor/lib64/libqti-perfd-client.so|aa4ce14b9f6cd3a0a00d3235f7155aa90825749f
-
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
@@ -453,8 +443,6 @@ vendor/lib64/libperipheral_client.so
 
 # Postprocessing
 vendor/lib64/libdisp-aba.so
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
 
 # QMI
 etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
@@ -679,7 +667,6 @@ vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
-vendor/etc/thermal-engine.conf|04a67cd64dee5d9718fd2b1f0dd96e3531165313
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
