@@ -62,6 +62,7 @@ service hwservicemanager /sbin/hwservicemanager
 service boot-1-0 /sbin/android.hardware.boot@1.0-service
     user root
     group root
+    disabled
     seclabel u:r:recovery:s0
 
 service servicemanager /sbin/servicemanager
@@ -96,6 +97,12 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
     disabled
     seclabel u:r:recovery:s0
 
+service time_daemon /sbin/time_daemon
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 on boot
     # save battery by switching to interactive once booted
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
@@ -109,6 +116,7 @@ on init
     setprop ro.hardware.bootctrl msm8998
     setprop ro.build.system_root_image true
     start prepdecrypt
+    start time_daemon
     #setprop crypto.ready 1
 
 on property:crypto.ready=1
@@ -117,6 +125,7 @@ on property:crypto.ready=1
     start gatekeeper-1-0
     start sbinqseecomd
     start servicemanager
+    restart time_daemon
 
 on property:crypto.ready=0
     stop sbinqseecomd
