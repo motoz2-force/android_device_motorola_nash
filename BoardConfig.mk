@@ -91,9 +91,7 @@ AB_OTA_UPDATER := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-PLATFORM_SECURITY_PATCH := 2025-12-31
+TW_INCLUDE_FBE := true
 
 # TWRP
 TW_THEME := portrait_hdpi
@@ -109,11 +107,9 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
-# MTP will not work until we update it to support ffs
-TW_EXCLUDE_MTP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
+TW_USE_TOOLBOX := true
 
 # Debug flags
 #TWRP_INCLUDE_LOGCAT := true
