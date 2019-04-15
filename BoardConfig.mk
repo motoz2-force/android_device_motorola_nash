@@ -112,6 +112,7 @@ TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 # MTP will not work until we update it to support ffs
 TW_EXCLUDE_MTP := true
+TW_INCLUDE_REPACKTOOLS := true
 
 # Debug flags
 #TWRP_INCLUDE_LOGCAT := true
