@@ -113,6 +113,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot
 # MTP will not work until we update it to support ffs
 TW_EXCLUDE_MTP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_HAS_EDL_MODE := true
 
 # Debug flags
 #TWRP_INCLUDE_LOGCAT := true
