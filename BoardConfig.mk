@@ -105,15 +105,18 @@ TW_INCLUDE_NTFS_3G := true
 TW_DEFAULT_BRIGHTNESS := 80
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXTRA_LANGUAGES := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
 TW_USE_TOOLBOX := true
 
+# Asian region languages
+TW_EXTRA_LANGUAGES := true
+#TW_DEFAULT_LANGUAGE := zh_CN
+
 # Debug flags
-#TWRP_INCLUDE_LOGCAT := true
-#TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := system/vendor
