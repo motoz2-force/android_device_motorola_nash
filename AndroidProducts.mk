@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_nash.mk
+    $(LOCAL_DIR)/potato_nash.mk
