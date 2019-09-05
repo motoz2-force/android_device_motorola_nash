@@ -115,8 +115,8 @@ TW_EXTRA_LANGUAGES := true
 #TW_DEFAULT_LANGUAGE := zh_CN
 
 # Debug flags
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
+#TWRP_INCLUDE_LOGCAT := true
+#TARGET_USES_LOGD := true
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := system/vendor
