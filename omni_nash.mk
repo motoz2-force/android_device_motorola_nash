@@ -59,10 +59,6 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
-# ROM fstab
-PRODUCT_COPY_FILES += \
-  device/motorola/nash/rootdir/root/fstab.qcom:root/fstab.qcom
-
 PRODUCT_DEVICE := nash
 PRODUCT_NAME := omni_nash
 PRODUCT_BRAND := motorola
