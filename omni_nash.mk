@@ -59,6 +59,14 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+# Properties for decryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8998 \
+    ro.hardware.gatekeeper=msm8998 \
+    ro.hardware.bootctrl=msm8998 \
+    ro.build.system_root_image=true
+
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nash
 PRODUCT_NAME := omni_nash
 PRODUCT_BRAND := motorola
