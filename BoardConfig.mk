@@ -97,7 +97,6 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 RECOVERY_SDCARD_ON_DATA := true
-TW_EXCLUDE_SUPERSU := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
