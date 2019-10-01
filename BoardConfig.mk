@@ -91,7 +91,7 @@ AB_OTA_UPDATER := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+TW_INCLUDE_CRYPTO_FBE := true
 
 # TWRP
 TW_THEME := portrait_hdpi
